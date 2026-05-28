@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu ❤️</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:Arial;
+overflow:hidden;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:25px;
+width:320px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+color:#ff4f81;
+}
+
+p{
+font-size:18px;
+color:#444;
+line-height:1.5;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#ff4f81;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff2f68;
+}
+
+#text{
+margin-top:20px;
+font-size:22px;
+color:#ff2f68;
+}
+
+.heart{
+position:absolute;
+top:-50px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Hai Sayang ❤️</h1>
+
+<p>
+Aku senang bisa kenal kamu ✨
+<br><br>
+Semoga kita selalu bersama ya.
+</p>
+
+<button onclick="love()">
+Klik Aku
+</button>
+
+<div id="text"></div>
+
+</div>
+
+<script>
+
+function love(){
+document.getElementById("text").innerHTML =
+"Aku Sayang Kamu ❤️";
+}
+
+function createHeart(){
+
+const heart =
+document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "❤️";
+
+heart.style.left =
+Math.random()*100 + "vw";
+
+heart.style.fontSize =
+(Math.random()*20+20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
